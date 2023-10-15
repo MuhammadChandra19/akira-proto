@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package common.v1;
+
+option go_package = "github.com/muhammadchandra19/akira-proto/proto/common/v1";
+
+
+message ErrorInfo {
+  string message = 1;
+  string code = 2;
+  string field = 3;
+}
+
+message ErrorResponse {
+  repeated ErrorInfo errors = 1;
+}
