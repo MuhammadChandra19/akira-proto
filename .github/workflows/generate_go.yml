@@ -38,7 +38,7 @@ jobs:
       run: |
         make run-go-workflow
 
-        git clone https://github.com/MuhammadChandra19/akira-go-proto.git
+        git clone https://$GITHUB_TOKEN@github.com/MuhammadChandra19/akira-go-proto.git
 
 
         rm -rf akira-go-proto/modules
