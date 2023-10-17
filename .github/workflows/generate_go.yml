@@ -35,24 +35,25 @@ jobs:
 
 
     - name: Commit and Push Generated Go File to Target
-      env:
-        SOURCE_REPO_TOKEN: ${{ secrets.GENERATOR_SECRET }}
       run: |
         make run-go-workflow
-        git config user.name "muhammad chandra zulfikar"
-        git config user.email "muhammadchandrazulfikar@gmail.com"
 
-        # Add the target repository as a remote
-        git remote add akira-go-proto https://github.com/MuhammadChandra19/akira-go-proto.git
+        git clone https://github.com/MuhammadChandra19/akira-go-proto.git
+
 
         rm -rf akira-go-proto/modules
 
         mkdir akira-go-proto/modules
-        
+
         cp -r go/modules/* akira-go-proto/modules
+
+        cd akira-go-proto
+        git config user.name "muhammad chandra zulfikar"
+        git config user.email "muhammadchandrazulfikar@gmail.com"
 
         git add .
         git commit -m "automated go generation"
 
-        # Create a new branch "version" in the target repository
-        git push akira-go-proto main
+        git push 
+      env:
+        GITHUB_TOKEN: ${{ secrets.GENERATOR_SECRET }}
