@@ -21,12 +21,13 @@ jobs:
     - name: Install Protoc
       uses: arduino/setup-protoc@v2
 
-    - name: Install protoc-gen-go
+    - name: Install protoc-gen-go and mockgen
       run: |
         go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28
         go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
+        go install github.com/golang/mock/mockgen@v1.5.0
 
-    - name: Add protoc-gen-go to PATH
+    - name: update go path
       run: export PATH=$PATH:$(go env GOPATH)/bin
 
     - name: Verify protoc-gen-go installation
