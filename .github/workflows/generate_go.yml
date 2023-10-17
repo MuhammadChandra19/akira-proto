@@ -3,7 +3,7 @@ name: Generate and Push Go File to Target
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   generate_and_push_to_target:
@@ -38,4 +38,3 @@ jobs:
 
         # Create a new branch "version" in the target repository
         git push akira-go-proto main
-        
