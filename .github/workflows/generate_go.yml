@@ -22,7 +22,7 @@ jobs:
       env:
         SOURCE_REPO_TOKEN: ${{ secrets.GENERATOR_SECRET }}
       run: |
-        make setup-go
+        make run-go-workflow
         git config user.name "muhammad chandra zulfikar"
         git config user.email "muhammadchandrazulfikar@gmail.com"
 
