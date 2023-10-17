@@ -47,6 +47,8 @@ jobs:
 
         rm -rf akira-go-proto/modules
 
+        mkdir akira-go-proto/modules
+        
         cp -r go/modules/* akira-go-proto/modules
 
         git add .
