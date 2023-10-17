@@ -48,7 +48,7 @@ jobs:
         cp -r go/modules/* akira-go-proto/modules
 
         cd akira-go-proto
-        git config user.name "muhammad chandra zulfikar"
+        git config user.name "MuhammadChandra19"
         git config user.email "muhammadchandrazulfikar@gmail.com"
 
         git add .
