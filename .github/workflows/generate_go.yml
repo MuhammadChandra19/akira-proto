@@ -38,3 +38,4 @@ jobs:
 
         # Create a new branch "version" in the target repository
         git push akira-go-proto main
+        
