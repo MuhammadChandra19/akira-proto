@@ -45,9 +45,9 @@ jobs:
         # Add the target repository as a remote
         git remote add akira-go-proto https://github.com/MuhammadChandra19/akira-go-proto.git
 
-        rm modules
+        rm -rf akira-go-proto/modules
 
-        cp -r go/modules/* modules
+        cp -r go/modules/* akira-go-proto/modules
 
         git add .
         git commit -m "automated go generation"
