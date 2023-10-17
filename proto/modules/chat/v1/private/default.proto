@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package chat.v1;
+
+option go_package = "github.com/muhammadchandra19/akira-proto/proto/chat/v1";
+
+message Empty {}

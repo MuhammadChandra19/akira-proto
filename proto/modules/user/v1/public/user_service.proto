@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package user.v1;
+
+option go_package = "github.com/muhammadchandra19/akira-proto/proto/user/v1";
+message User {
+  string username = 1;
+	string email = 2;
+  string name = 3;
+  string photourl = 4;
+}
+
+message SignInRequest {
+  string email = 1;
+}
+
+message TokenResponse {
+	string token = 1;
+}
+
+message SearchParams {
+  string query = 1;
+}
+
+message SearchResponse {
+  repeated User users = 1;
+}
+
+service UserProto {
+  rpc RegisterUser(User) returns (TokenResponse);
+  rpc SearchUser(SearchParams) returns (SearchResponse);
+  rpc SignIn(SignInRequest) returns (TokenResponse);
+}

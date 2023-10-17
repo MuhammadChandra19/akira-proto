@@ -7,10 +7,14 @@ download-depedencies:
 	curl -L https://raw.githubusercontent.com/google/gnostic/main/openapiv3/OpenAPIv3.proto -o proto/openapiv3/OpenAPIv3.proto
 
 generate-go: 
-	make init-go
 	chmod 777 go-script/proto-generator.sh
 	go-script/proto-generator.sh
 
 init-go:
 	chmod 777 go-script/init-go.sh
 	go-script/init-go.sh
+
+run-go-workflow:
+		make init-go
+		make generate-go
+
